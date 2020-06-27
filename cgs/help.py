@@ -17,8 +17,8 @@ class help_(commands.Cog):
         global page
         global p1,p2,p3,p4, p5
         home = os.getcwd()
-        path1 = (f'{home}\servers\{ctx.guild.id}')
-        with open(f'{path1}\config.json', 'r') as f:
+        path1 = (f'{home}/servers/{ctx.guild.id}')
+        with open(f'{path1}/config.json', 'r') as f:
             prefixes = json.load(f)#тут я прочитал то что там есть
 
         prefix = prefixes["Prefix"]
