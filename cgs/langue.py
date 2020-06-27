@@ -17,10 +17,10 @@ class langue(commands.Cog):
         else:
             if langue == 'ENG' or langue == "RUS":
                 home = os.getcwd()
-                path1 = f'{home}\servers\{ctx.guild.id}'
-                with open(f'{path1}\config.json','r') as f:
+                path1 = f'{home}/servers/{ctx.guild.id}'
+                with open(f'{path1}/config.json','r') as f:
                     data1 = json.load(f)
-                with open(f'{path1}\config.json','w') as f:
+                with open(f'{path1}/config.json','w') as f:
                     data1["Language"] = langue
                     json.dump(data1, f)
                 await ctx.send(f"__**{langue}**__")
