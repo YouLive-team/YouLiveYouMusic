@@ -22,14 +22,14 @@ class prefix(commands.Cog):
             await ctx.send(embed=embed)
             return
         home = os.getcwd()
-        path1 = f'{home}\servers\{ctx.guild.id}'
+        path1 = f'{home}/servers/{ctx.guild.id}'
         #Открыл для чтения
-        with open(f'{path1}\config.json', 'r') as f:
+        with open(f'{path1}/config.json', 'r') as f:
             prefixes = json.load(f)#тут я прочитал то что там есть
     
         prefixes["Prefix"] = prefix
         #Открыл для записи
-        with open(f'{path1}\config.json', 'w') as f:
+        with open(f'{path1}/config.json', 'w') as f:
             json.dump(prefixes, f)#тут я записал
         if await MusicBot.langueg(ctx) == "RUS":
             embed=discord.Embed(title=f"__{ctx.author.name}__ изменил префикс: `{prefix}`",color=0xff7606)
