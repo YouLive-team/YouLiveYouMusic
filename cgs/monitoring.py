@@ -50,8 +50,8 @@ class test(commands.Cog):
     async def on_message(self,message):
         home = os.getcwd()
     
-        path1 = (f'{home}\servers\{message.guild.id}')
-        with open(f'{path1}\config.json', 'r') as f:
+        path1 = (f'{home}/servers/{message.guild.id}')
+        with open(f'{path1}/config.json', 'r') as f:
             prefixes = json.load(f)#тут я прочитал то что там есть
             prefixes = prefixes["Prefix"]
         if message.content == "prefix" or message.content == "префикс":
