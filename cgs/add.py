@@ -11,7 +11,7 @@ from discord.utils import get, find
 
 #func 4 find youtube video id
 async def ffindyoutube(string):
-    yt = YouTubeDataAPI(YOUTUBE_API)
+    yt = YouTubeDataAPI(next(MusicBot.YOUTUBE_API))
     searches = yt.search(q=string, max_results=1)
     video_id = []
     for id_ in searches:
