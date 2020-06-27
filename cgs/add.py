@@ -36,7 +36,7 @@ class add(commands.Cog):
         path1 = f'{home}/servers/{ctx.guild.id}'
 
         with open(f'{path1}/music_queue.txt','a',  encoding='Latin-1') as f:
-            f.write(f'{url}')
+            f.write(f'{url}\n')
 
         video = pafy.new(url)
         if await MusicBot.langueg(ctx) == "RUS":
