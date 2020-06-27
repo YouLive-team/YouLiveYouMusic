@@ -6,6 +6,7 @@ from urllib.parse import quote
 import urllib.request
 import pafy
 import asyncio
+import ffmpeg
 try:
     import MusicBot
 except: pass
