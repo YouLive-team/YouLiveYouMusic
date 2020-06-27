@@ -72,9 +72,9 @@ async def main_fplay(self,ctx, arg):
             self.voice.source.volume = self.vol
         except:#Если песня уже играет то мы добавим новую в список
 
-            path1 = f'{self.home}\servers\{ctx.guild.id}'
-            with open(f'{path1}\music_queue.txt','a',  encoding='Latin-1') as f:
-                f.write(f'{url}\n')
+            path1 = f'{self.home}/servers/{ctx.guild.id}'
+            with open(f'{path1}/music_queue.txt','a',  encoding='Latin-1') as f:
+                f.write(f'{url}')
 
             video = pafy.new(url)
             if await MusicBot.langueg(ctx) == "RUS":
@@ -84,9 +84,9 @@ async def main_fplay(self,ctx, arg):
             await ctx.send(embed=embed)
             return
 
-        path1 = f'{self.home}\servers\{guild.id}'
+        path1 = f'{self.home}/servers/{guild.id}'
         # прочитаем файл построчно
-        with open(f'{path1}\music_queue.txt', 'r') as f:
+        with open(f'{path1}/music_queue.txt', 'r') as f:
             lines = f.readlines()
         try:
             next_ = lines[0]
@@ -257,9 +257,9 @@ async def main_play(self,ctx, arg):
             self.voice.source.volume = self.vol
         except:#Если песня уже играет то мы добавим новую в список
 
-            path1 = f'{self.home}\servers\{ctx.guild.id}'
-            with open(f'{path1}\music_queue.txt','a',  encoding='Latin-1') as f:
-                f.write(f'{url}\n')
+            path1 = f'{self.home}/servers/{ctx.guild.id}'
+            with open(f'{path1}/music_queue.txt','a',  encoding='Latin-1') as f:
+                f.write(f'{url}')
 
             video = pafy.new(url)
             if await MusicBot.langueg(ctx) == "RUS":
@@ -269,10 +269,10 @@ async def main_play(self,ctx, arg):
             await ctx.send(embed=embed)
             return
 
-        path1 = f'{self.home}\servers\{guild.id}'
+        path1 = f'{self.home}/servers/{guild.id}'
 
         # прочитаем файл построчно
-        with open(f'{path1}\music_queue.txt', 'r') as f:
+        with open(f'{path1}/music_queue.txt', 'r') as f:
             lines = f.readlines()
         try:
             next_ = lines[0]
@@ -376,10 +376,10 @@ class play(commands.Cog):
     async def skip(self, ctx):
 
 
-        path1 = f'{self.home}\servers\{ctx.guild.id}'
+        path1 = f'{self.home}/servers/{ctx.guild.id}'
 
         # прочитаем файл построчно
-        with open(f'{path1}\music_queue.txt', 'r') as f:
+        with open(f'{path1}/music_queue.txt', 'r') as f:
             lines = f.readlines()
 
         try:
@@ -410,11 +410,11 @@ class play(commands.Cog):
         self.voice.source.volume = self.vol
 
         #Убираем первую строку из файла
-        with open(f'{path1}\music_queue.txt', 'w') as f:
+        with open(f'{path1}/music_queue.txt', 'w') as f:
             f.writelines(lines[1:])
 
         # прочитаем файл построчно
-        with open(f'{path1}\music_queue.txt', 'r') as f:
+        with open(f'{path1}/music_queue.txt', 'r') as f:
             lines = f.readlines()
 
         try:
@@ -567,7 +567,7 @@ class play(commands.Cog):
                     pass
 
                 # прочитаем файл построчно
-                with open(f'{path1}\music_queue.txt', 'r') as f:
+                with open(f'{path1}/music_queue.txt', 'r') as f:
                     lines = f.readlines()
                 try:
                     url = lines[0]
@@ -590,7 +590,7 @@ class play(commands.Cog):
 
                 #Запускаем поток
 
-                path1 = f'{self.home}\servers\{guild.id}'
+                path1 = f'{self.home}/servers/{guild.id}'
 
                 try:
                     video = pafy.new(url)
@@ -609,11 +609,11 @@ class play(commands.Cog):
                 self.voice.source.volume = self.vol
 
                 #Убираем первую строку из файла
-                with open(f'{path1}\music_queue.txt', 'w') as f:
+                with open(f'{path1}/music_queue.txt', 'w') as f:
                     f.writelines(lines[1:])
 
                 # прочитаем файл построчно
-                with open(f'{path1}\music_queue.txt', 'r') as f:
+                with open(f'{path1}/music_queue.txt', 'r') as f:
                     lines = f.readlines()
 
                 try:
