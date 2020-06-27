@@ -17,13 +17,14 @@ bot = commands.Bot(command_prefix=custom_prefix)
 
 
 #Here you should put youtubeapi
-YOUTUBE_API = cycle(["YT_API1",
-               "YT_API2",
-               "YT_API3",
-               "YT_API4",
-               "YT_API5"])
+YOUTUBE_API = cycle([str(os.environ.get("YT_API1")),
+               str(os.environ.get("YT_API2")),
+               str(os.environ.get("YT_API3")),
+               str(os.environ.get("YT_API4")),
+               str(os.environ.get("YT_API5"))
+                    ])
 #Here you should put in first nikname from yandex music, second password from yandex music
-YANDEX_API = ["NIKNAME", "PASSWORD"]
+YANDEX_API = [str(os.environ.get("NIKNAME")), str(os.environ.get("PASSWORD"))]
 
 #Удаление команд
 bot.remove_command('help')
@@ -71,4 +72,4 @@ for filename in os.listdir('./cgs'): # Цикл перебирающий фай�
 
 
 
-bot.run("BOT_TOKEN")
+bot.run(str(os.environ.get("BOT_TOKEN")))
