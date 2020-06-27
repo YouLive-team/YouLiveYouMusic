@@ -24,7 +24,7 @@ class test(commands.Cog):
         print(colored(f'{now}:  «Я готов»', 'blue'))
         _type = discord.ActivityType.listening
         activity = discord.Activity(name=f"{len(self.bot.guilds)} servers", type=_type)
-        status = discord.Status.dnd
+        status = discord.Status.online
         await self.bot.change_presence(activity=activity, status=status)
 
     @commands.Cog.listener()
