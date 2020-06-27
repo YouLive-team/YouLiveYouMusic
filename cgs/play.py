@@ -475,6 +475,8 @@ class play(commands.Cog):
 #----------------Плей 10 песен--------------------#
     @commands.command(aliases = ["p"])
     async def play(self,ctx, arg: str = None):
+        if arg == None:
+            return
         await main_play(self,ctx, arg)
 
 
