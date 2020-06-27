@@ -5,6 +5,7 @@ from discord.utils import get
 from yandex_music.client import Client
 import logging
 import os
+import ffmpeg
 
 try:
     import MusicBot
