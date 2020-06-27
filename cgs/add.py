@@ -8,8 +8,6 @@ import MusicBot
 
 from discord.utils import get, find
 
-YOUTUBE_API = "AIzaSyDLVxVknhcYoZe7__vrvjq2Z6ZRqNYVRsI"
-
 
 #func 4 find youtube video id
 async def ffindyoutube(string):
@@ -35,10 +33,10 @@ class add(commands.Cog):
 
 
         home = os.getcwd()
-        path1 = f'{home}\servers\{ctx.guild.id}'
+        path1 = f'{home}/servers/{ctx.guild.id}'
 
-        with open(f'{path1}\music_queue.txt','a',  encoding='Latin-1') as f:
-            f.write(f'{url}\n')
+        with open(f'{path1}/music_queue.txt','a',  encoding='Latin-1') as f:
+            f.write(f'{url}')
 
         video = pafy.new(url)
         if await MusicBot.langueg(ctx) == "RUS":
@@ -51,10 +49,10 @@ class add(commands.Cog):
     async def purge(self, ctx):
 
         home = os.getcwd()
-        path1 = f'{home}\servers\{ctx.guild.id}'
+        path1 = f'{home}/servers/{ctx.guild.id}'
 
         # прочитаем файл построчно
-        with open(f'{path1}\music_queue.txt', 'r') as f:
+        with open(f'{path1}/music_queue.txt', 'r') as f:
             lines = f.readlines()
         try:
             video = pafy.new(lines[0])
@@ -66,7 +64,7 @@ class add(commands.Cog):
             await ctx.send(embed=embed)
             return
         # запишем файл построчно пропустив первую строку
-        with open(f'{path1}\music_queue.txt', 'w') as f:
+        with open(f'{path1}/music_queue.txt', 'w') as f:
             f.writelines(lines[1:])
 
         if await MusicBot.langueg(ctx) == "RUS":
@@ -78,10 +76,10 @@ class add(commands.Cog):
     @commands.command(aliases = ["pl"])
     async def playlist(self, ctx):
         home = os.getcwd()
-        path1 = f'{home}\servers\{ctx.guild.id}'
+        path1 = f'{home}/servers/{ctx.guild.id}'
 
         # прочитаем файл построчно
-        with open(f'{path1}\music_queue.txt', 'r') as f:
+        with open(f'{path1}/music_queue.txt', 'r') as f:
             lines = f.readlines()
         list_ = ''
         i = 0
@@ -104,10 +102,10 @@ class add(commands.Cog):
     @commands.command(aliases = ["cls"])
     async def clear(self, ctx):
         home = os.getcwd()
-        path1 = f'{home}\servers\{ctx.guild.id}'
+        path1 = f'{home}/servers/{ctx.guild.id}'
 
         # прочитаем файл построчно
-        with open(f'{path1}\music_queue.txt', 'wb') as f:
+        with open(f'{path1}/music_queue.txt', 'wb') as f:
             pass
 
         if await MusicBot.langueg(ctx) == "RUS":
