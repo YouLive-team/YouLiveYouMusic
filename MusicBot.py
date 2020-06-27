@@ -8,8 +8,8 @@ from itertools import cycle
 async def custom_prefix(bot, message):
     home = os.getcwd()
 
-    path1 = (f'{home}\servers\{message.guild.id}')
-    with open(f'{path1}\config.json', 'r') as f:
+    path1 = (f'{home}/servers/{message.guild.id}')
+    with open(f'{path1}/config.json', 'r') as f:
         prefixes = json.load(f)#тут я прочитал то что там есть
     return prefixes["Prefix"] #Тут я возвращаю то значение которое есть в prefix
 
@@ -33,7 +33,7 @@ bot.remove_command('help')
 async def langueg(ctx):
     home = os.getcwd()
     try:
-        path1 = (f'{home}\servers\{ctx.guild.id}')
+        path1 = (f'{home}/servers/{ctx.guild.id}')
         os.mkdir(path1)
         os.chdir(path1)
     except OSError:
