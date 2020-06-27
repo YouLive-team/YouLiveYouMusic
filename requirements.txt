@@ -41,3 +41,5 @@ yandex-music
 yarl
 youtube-data-api
 youtube-dl
+ffmpeg
+ffmpeg-python
