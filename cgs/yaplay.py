@@ -18,7 +18,7 @@ class yaplay(commands.Cog):
         self.home = os.getcwd()
     @commands.command(aliases = ["yap"])
     async def yaplay(self, ctx, arg: str = None):
-        path1 = f'{self.home}\servers\{ctx.guild.id}'
+        path1 = f'{self.home}/servers/{ctx.guild.id}'
         if arg == None:
             if await MusicBot.langueg(ctx) == "RUS":
                 embed=discord.Embed(title=f"Вы должны указать название трэка",color=0xff7606)
@@ -124,7 +124,7 @@ class yaplay(commands.Cog):
         message = await channel.fetch_message(payload.message_id)
         member = discord.utils.get(message.guild.members, id=payload.user_id)
         guild = message.guild
-        path1 = f'{self.home}\servers\{message.guild.id}'
+        path1 = f'{self.home}/servers/{message.guild.id}'
         emoji = str(payload.emoji)
         try:
             if emoji == "▶" and member.bot == False and member.voice:
