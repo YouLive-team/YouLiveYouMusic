@@ -43,6 +43,9 @@ async def langueg(ctx):
     os.chdir(home)
     return lang["Language"] #Тут я возвращаю то значение которое есть в prefix
 
+@bot.command()
+async def ping(ctx):
+    await ctx.send("pong")
 
 #Загружаю коги
 @bot.command()
